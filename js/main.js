@@ -1,6 +1,7 @@
 
 $startButton = document.querySelector("button")
 let body = document.querySelector("body")
+let $all = document.querySelector("section")
 let p = document.querySelector("p")
 var $timer = document.createElement("p")
 let $Section = document.createElement("section");
@@ -57,38 +58,29 @@ function swipLettet(level) {
         $Letter.setAttribute("id", [j])
         $Letter.textContent = currentWord[j]
         body.appendChild($timer)
-        body.appendChild($score)
-        body.appendChild($graidCon)
+        body.appendChild($score) 
         gridList.push($graidItem);
+        body.appendChild($graidCon)
         body.appendChild($Section)
         $Section.appendChild($Letter)
         $graidCon.appendChild($graidItem)
         let letterId = currentWord[$Letter["id"]]
-        console.log($graidItem["id"]);
-
-        gridList[$graidItem["id"]].addEventListener("click",function(){
-            gridList[$graidItem["id"]].textContent="";
-             document.getElementById('click').play();
-     ansarry.splice(ansarry.indexOf(letterId),1)
-    i--;
-    }) 
-
         $Letter.addEventListener("click", function () {
+            // $Letter.style.display="none"
             document.getElementById('click').play();
             gridList[i].textContent = letterId;
             i++; 
         ansarry.push(letterId)
-      
         console.log(ansarry);
         if(ansarry.length===words[level].length){
             checkAns();
            }
 
         })
+        removEvent($graidItem);
     }
 
 } 
-console.log(words.length);
 
 
 
@@ -128,6 +120,8 @@ function checkAns(){
          ansarry = []
          currentWord = []
          clearInterval(timeId)
+         i=0;
+         gridList=[]
 
 }
 else if (ansarry!==tempW){
@@ -172,3 +166,38 @@ let name =  document.getElementById('by')
        name.textContent = "By : SARA"
     }
 }
+
+
+
+
+// function addEvent(){
+//         $Letter.addEventListener("click", function () {
+//             document.getElementById('click').play();
+//             gridList[i].textContent = letterId;
+//             i++; 
+//         ansarry.push(letterId)
+//         console.log(ansarry);
+//         if(ansarry.length===words[level].length){
+//             checkAns();
+//            }
+
+//         })
+
+// }
+function removEvent($graidItem){
+    $graidItem.addEventListener("click",function(){
+          
+   
+    let gridId = $graidItem["id"];
+    console.log(gridId);
+    
+    let gridletter = gridList[$graidItem["id"]].textContent;
+    document.getElementById('click').play();
+   gridList[gridId].textContent= "";
+ansarry.splice(ansarry.indexOf(gridletter),1)
+console.log(ansarry)
+if(i!=-1)
+{
+i--;}
+}
+    )}
