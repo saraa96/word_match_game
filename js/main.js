@@ -185,19 +185,21 @@ let name =  document.getElementById('by')
 
 // }
 function removEvent($graidItem){
-    $graidItem.addEventListener("click",function(){
+    $graidItem.addEventListener("click",function(e){
           
    
     let gridId = $graidItem["id"];
     console.log(gridId);
     
-    let gridletter = gridList[$graidItem["id"]].textContent;
-    document.getElementById('click').play();
-   gridList[gridId].textContent= "";
+    let gridletter = e.target.textContent;
+   // document.getElementById('click').play();
+    e.target.textContent= "";
+    if(gridletter){
 ansarry.splice(ansarry.indexOf(gridletter),1)
 console.log(ansarry)
 if(i!=-1)
 {
 i--;}
 }
+    }
     )}
