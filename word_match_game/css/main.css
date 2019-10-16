@@ -1,22 +1,23 @@
-
 body{
-    margin-top: 300px;
+margin : 0px;
     background-color: beige;
     overflow: auto;
+
 }
 
 .buttonStart {
+    
     background-color: beige;
-    margin-top: 370px;
+    margin-top: 300px;
 margin-left:auto;
 margin-right:auto;
     border: 5px solid #2c3e50;
     color: #2c3e50;
     display: block;
     font-family: 'trebuchet ms';
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    padding: 1rem;
+    font-size: 70px;
+    letter-spacing: 0.1px;
+    padding: 20px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -28,8 +29,8 @@ margin-right:auto;
     box-shadow: 10px 10px 0 #F1C40F, 
                 20px 20px 0 #3498DB;
     position: absolute;
-    left: 0.25rem;
-    top: 0.5rem;
+    left: 8px;
+    top: 15px;
     height: 102%;
     width: 102%;
     z-index: -1;
@@ -46,10 +47,8 @@ margin-right:auto;
   
 
 .gameCon{
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin-left: 50px;;
+    margin-top: 20px;
 
 }
 .letter{
@@ -58,14 +57,14 @@ margin-right:auto;
     border: none;
 font-size: 40px;
 font-family: 'Courier New', Courier, monospace;
-padding: 10px;
+padding: 20px;
 border-radius: 100%;
 margin-left:10px;
 text-align: center;
 box-shadow: -2px 2px 0 gray;
 background-color: #F1C40F;
 color: white;
-gap: 0.1px;
+gap: 2px;
 
 }
 .letter:hover{
@@ -87,17 +86,15 @@ gap: 0.1px;
     
     display:grid;
     grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
-    margin-left: 250px;
-    justify-content: center;
     gap: 0.1px;
 }
 .timer{
-   
+    margin-top: 250px;
     margin-left: 10px;
     width: 20px;
     height: 20px;
     padding: 15px 25px;
-    background-color: #3498DB;
+    background-color: #E26A6A;
     color:white;
     font-family: arial;
     font-size: 20px;
@@ -129,8 +126,6 @@ margin-top: 2px;
     margin-top: 220px;
    margin-left: 370px;
     background-color: #ffffff;
-    /* box-shadow: 10px 10px 0 #F1C40F, 
-    20px 20px 0 #3498DB,30px 30px #E26A6A; */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -161,15 +156,30 @@ p{
     margin-left:430px;
     display: block;
 font-size: 20px;
-   
 
 }
 #by{
-    
     font-family: 'Courier New', Courier, monospace;
     color: #2c3e50;
     letter-spacing: 0.1rem;
     display: block;
 margin-top: -200px;
 margin-left:600px;
+}
+.allGame{
+    margin-top: 10%;
+width: 100%;
+height: 100%;
+margin-left:35%;
+margin-right: auto;
+align-items: center;
+}
+.header{
+background-color:rgb(40, 80, 113);
+padding: 30px;
+font-size: 25px;
+color: white;
+font-family: Georgia, 'Times New Roman', Times, serif;;
+letter-spacing: 1px;
+box-shadow: -3px 3px 0 gray;
 }

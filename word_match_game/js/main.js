@@ -1,7 +1,7 @@
 
 $startButton = document.querySelector("button")
 let body = document.querySelector("body")
-let $all = document.querySelector("section")
+let $all = document.createElement("div")
 let p = document.querySelector("p")
 var $timer = document.createElement("p")
 let $Section = document.createElement("section");
@@ -29,7 +29,7 @@ let words = [
 ]
 
 $startButton.addEventListener("click", function () {
-    body.style.backgroundColor = "beige"
+
     $startButton.style.display = "none"
     p.style.display="none"
     $score.innerText="SCORE : ";
@@ -45,6 +45,7 @@ function swipLettet(level) {
     $score.classList.add("score")
     let body = document.querySelector("body")
     let $graidItem = document.createElement("div");
+    $all.classList.add("allGame")
     $Section.classList.add("gameCon")
     $graidCon.classList.add("Con")
     $graidItem.classList.add("item")
@@ -60,14 +61,13 @@ function swipLettet(level) {
         body.appendChild($timer)
         body.appendChild($score) 
         gridList.push($graidItem);
-        body.appendChild($graidCon)
-        body.appendChild($Section)
-        $Section.appendChild($Letter)
+        body.appendChild($all)  
+            $all.appendChild($graidCon)
+        $all.appendChild($Section)
+         $Section.appendChild($Letter)
         $graidCon.appendChild($graidItem)
         let letterId = currentWord[$Letter["id"]]
         $Letter.addEventListener("click", function () {
-            // $Letter.style.display="none"
-            document.getElementById('click').play();
             gridList[i].textContent = letterId;
             i++; 
         ansarry.push(letterId)
@@ -156,34 +156,18 @@ let name =  document.getElementById('by')
         $score.style.display = "none"
         $timer.style.display = "none"
         $finalStatment.innerHTML="YOU ARE AWESOME!!!!!!" + " </br></br>YOUR SCORE IS = "+score + "</br></br>YOU SOLVED IN " + lastSec +" SECONDS";
-        name.textContent = "By : SARA"
+        name.textContent = "By: SARA"
     }
     else {
         document.getElementById('loss').play();
         $score.style.display = "none"
         $timer.style.display = "none"
         $finalStatment.innerHTML = "You should OPEN dictionary sometimes " + " </br> </br>YOUR SCORE IS = "+score + "</br> </br>YOU SOLVED IN " + lastSec+" SECONDS";
-       name.textContent = "By : SARA"
+       name.textContent = "By: SARA"
     }
 }
 
 
-
-
-// function addEvent(){
-//         $Letter.addEventListener("click", function () {
-//             document.getElementById('click').play();
-//             gridList[i].textContent = letterId;
-//             i++; 
-//         ansarry.push(letterId)
-//         console.log(ansarry);
-//         if(ansarry.length===words[level].length){
-//             checkAns();
-//            }
-
-//         })
-
-// }
 function removEvent($graidItem){
     $graidItem.addEventListener("click",function(e){
           
@@ -192,7 +176,6 @@ function removEvent($graidItem){
     console.log(gridId);
     
     let gridletter = e.target.textContent;
-   // document.getElementById('click').play();
     e.target.textContent= "";
     if(gridletter){
 ansarry.splice(ansarry.indexOf(gridletter),1)
