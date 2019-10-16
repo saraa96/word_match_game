@@ -173,8 +173,6 @@ function removEvent($graidItem){
           
    
     let gridId = $graidItem["id"];
-    console.log(gridId);
-    
     let gridletter = e.target.textContent;
     e.target.textContent= "";
     if(gridletter){
@@ -182,7 +180,7 @@ ansarry.splice(ansarry.indexOf(gridletter),1)
 console.log(ansarry)
 if(i!=-1)
 {
-i--;}
+i--}
 }
     }
     )}
